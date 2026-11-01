@@ -124,6 +124,12 @@ HTML_TPL = """<!DOCTYPE html>
         <div class="update-time">最近更新：{now_str}</div>
     </div>
 
+    <!-- 库存/监控简报区 置顶 -->
+    <div class="monitor-area">
+        <h2>📡 官网认证二手车监控当日简报（库存信息）</h2>
+        {report_content}
+    </div>
+
     <div class="tip-box">
         ✅ 适用场景：深圳单人通勤、预算14–20w、在意颈椎/脊柱舒适性、优先省心耐用；
         ⚠️ 重要红线：FSD/EAP过户后会回收，不要为智驾软件溢价买单；
@@ -179,12 +185,7 @@ HTML_TPL = """<!DOCTYPE html>
         <div>4. 特殊红漆版本：车漆溢价高，二手折价更大</div>
     </div>
 
-    <!-- 每日监控数据区域 -->
-    <div class="monitor-area">
-        <h2>📡 官网认证二手车监控当日简报</h2>
-        {report_content}
-    </div>
-
+    <!-- 每日监控数据区域(已置顶,此处移除) -->
     <div class="footer-note">
         监控续期节点：2026-11-30；<br>
         说明：本看板仅为个人参考，价格为特斯拉官网认证二手挂牌价，不含议价；所有车源以特斯拉中国官网实时页面为准。
