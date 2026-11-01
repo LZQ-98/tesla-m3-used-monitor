@@ -8,6 +8,11 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -20,10 +25,19 @@ jobs:
         env:
           REPORT: ${{ github.event.client_payload.report }}
           UPDATE_TIME: ${{ github.event.client_payload.update_time }}
-      - name: Commit & Push
+      - name: Commit & Push (保存简报快照到仓库)
         run: |
           git config --global user.name "LZQ-98"
           git config --global user.email "lzq@example.com"
           git add index.html
           git diff --quiet && git diff --staged --quiet || git commit -m "auto: update ${{ github.event.client_payload.update_time }}"
           git push
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
