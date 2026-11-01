@@ -131,7 +131,7 @@ HTML_TPL = """<!DOCTYPE html>
     </div>
 
     <div class="tip-box">
-        ✅ 适用场景：深圳单人通勤、预算14–20w、在意颈椎/脊柱舒适性、优先省心耐用；
+        ✅ 适用场景：深圳单人通勤、预算21.5w内、白色标续、在意颈椎/脊柱舒适性、优先省心耐用；
         ⚠️ 重要红线：FSD/EAP过户后会回收，不要为智驾软件溢价买单；
         📌 两代区分：Highland焕新版（2023-10后，带通风+后排8寸屏）｜老平台21/22款（无通风，不优先）
     </div>
@@ -139,10 +139,10 @@ HTML_TPL = """<!DOCTYPE html>
     <!-- S级 首选目标 -->
     <div class="rank-card s-rank">
         <div class="rank-title">🏆 S级｜主目标（监控置顶【目标匹配✅】）</div>
-        <div>2023-10 Highland 后轮驱动版｜珍珠白/冷光白 + 原厂18英寸光子轮毂</div>
-        <div class="price-tag">行情参考：2–4万公里，17.2w ~ 18.3w｜好价锚点：≤17.5w</div>
-        <div class="good"><span>✅优点：</span>能耗最优、胎壁厚抗鼓包、滤震友好、前排座椅通风、保值率最高</div>
-        <div class="bad"><span>❌缺点：</span>货源稀缺，上架容易被抢</div>
+        <div>Model 3 标续（后轮驱动版）｜白色车漆 + 深圳/周边 + 21.5w内 + 公里数少</div>
+        <div class="price-tag">硬性条件：标续后轮驱动版｜白色｜价格≤21.5w｜优先深圳，周边可接受</div>
+        <div class="good"><span>✅优点：</span>标续续航够用、白色保值、深圳本地提车方便</div>
+        <div class="bad"><span>❌注意：</span>白色标续货源少，需持续蹲守</div>
     </div>
 
     <!-- A级 备选 -->
