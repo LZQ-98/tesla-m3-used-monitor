@@ -1,0 +1,29 @@
+name: Receive Tesla Monitor Report
+on:
+  repository_dispatch:
+    types: [submit-report]
+
+jobs:
+  update-page:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run render script
+        run: python3 render.py
+        env:
+          REPORT: ${{ github.event.client_payload.report }}
+          UPDATE_TIME: ${{ github.event.client_payload.update_time }}
+      - name: Commit & Push
+        run: |
+          git config --global user.name "LZQ-98"
+          git config --global user.email "lzq@example.com"
+          git add index.html
+          git diff --quiet && git diff --staged --quiet || git commit -m "auto: update ${{ github.event.client_payload.update_time }}"
+          git push
